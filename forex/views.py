@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from .forms import ForexRateForm
 from .models import ForexRate
 
-api_key = '***********************'
+api_key = '***************'
 
 def index(request):
 	return render(request,'forex/index.html')
@@ -50,7 +50,6 @@ def custom_forex_rate(request):
             base_currency = form.cleaned_data['base_currency']
             target_currency = form.cleaned_data['target_currency']
 
-            api_key = '674ae76c2d38498e80a2997a88f46dfa'
             base_currency = 'USD'
             url = f'https://openexchangerates.org/api/latest.json?app_id={api_key}&base={base_currency}'
             response = requests.get(url)
